@@ -6,14 +6,17 @@ on:
 
 jobs:
 
-  build_and_run:
-
+  build:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
       run: docker build ./NeuralNetwork --file ./NeuralNetwork/Dockerfile --tag vlado-nn-exercise:$(date +%s)
-      
+  run:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Run the Docker Image
+      run: docker run --rm -it vlado-nn-exercise:$(date +%s)
   
        
