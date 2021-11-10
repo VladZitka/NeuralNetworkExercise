@@ -1,11 +1,6 @@
 name: Docker Image CI
 
 on:
-  push:
-    branches:  
-    - main 
-  pull_request:
-    branches: [ main ]
   workflow_dispatch:
 
 
@@ -13,7 +8,7 @@ jobs:
 
   build_and_run:
 
-    runs-on: ubuntu-16.04
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
