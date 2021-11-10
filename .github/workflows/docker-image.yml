@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Build the Docker image
-      run: docker build ./NeuralNetwork/ --file Dockerfile --tag vlado-nn-exercise:$(date +%s)
+      run: docker build . --file ./NeuralNetwork/Dockerfile --tag vlado-nn-exercise:$(date +%s)
       
   
        
